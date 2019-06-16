@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import *
+﻿from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from start import Ui_MainWindow
@@ -12,7 +12,7 @@ class startwindow(QMainWindow):
         super(startwindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        
+        side_flag = ""
         #<-- Установка изображений 
         self.ui.krestik.setIcon(QIcon('close.png'))
         self.ui.krestik.setIconSize(QSize(80, 80))
@@ -20,7 +20,7 @@ class startwindow(QMainWindow):
         self.ui.nolik.setIcon(QIcon('nol.png'))
         self.ui.nolik.setIconSize(QSize(80, 80))
         #-->
-
+        print(12313)
         self.game = gamewindow()
         
         self.ui.krestik.clicked.connect(self.krestikClicked)
@@ -28,6 +28,7 @@ class startwindow(QMainWindow):
         
     def krestikClicked(self):
         self.game.show()
+        self.side_flag = "x"
         
     def nolikClicked(self):
         pass
@@ -38,6 +39,10 @@ class gamewindow(QWidget):
         super(gamewindow, self).__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+        self.ui.krestik_1.clicked.connect(self.krestik_1Clicked)
+    def krestik_1Clicked(self):
+        print(application.side_flag)
+
 
 app = QApplication([])
 application = startwindow()
