@@ -16,7 +16,7 @@ class mywindow(QMainWindow):
         self.ui.krestik.setIconSize(QSize(80, 80))
 
         self.ui.nolik.setIcon(QIcon('nol.png'))
-        self.ui.nolik.setIconSize(QSize(80, 80)
+        self.ui.nolik.setIconSize(QSize(80, 80))
         #-->            
 app = QApplication([])
 application = mywindow()
